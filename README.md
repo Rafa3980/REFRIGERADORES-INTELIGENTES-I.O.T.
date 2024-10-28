@@ -1,3 +1,8 @@
+<p align="center">
+    <img width="100" src="assets/faci.png">
+</p>
+
+
 # REFRIGERADORES INTELIGENTES USANDO MICROCONTROLADORES
 Sistema de Monitoramento de Temperatura para Refrigeradores com Amostras Laboratoriais
 
