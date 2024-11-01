@@ -1,0 +1,93 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: white;
+  padding: 40px 40px;
+  border-radius: 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+.login-title {
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  background-color: #f1f4f9;
+  width: 100%;
+  padding: 10px 2%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.login-p {
+  font-size: 14px;
+  color: #202224;
+}
+
+.login-checkbox {
+  display: flex;
+  align-items: start;
+  padding: 0px 6px;
+  align-items: center;
+  margin: 0px 0px 25px 0px;
+}
+
+.remember {
+  padding: 0px 0px 0px 5px;
+}
+
+.login-button {
+  width: 80%;
+  padding: 10px;
+  background-color:#4880FF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #357ABD;
+}
+
+.login-container a {
+  color: #202224;
+}
+
+.login-container a:hover {
+  color: #5A8CFF;
+}
+
+.login-text {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.login-forms {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.create-button {
+  text-decoration: underline;
+}
+
+input::placeholder {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+label {
+  font-size: 14px;
+}
