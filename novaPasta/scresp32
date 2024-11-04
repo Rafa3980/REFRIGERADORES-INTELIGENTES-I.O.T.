@@ -1,0 +1,61 @@
+#include <WiFi.h>                           
+#include <IOXhop_FirebaseESP32.h>           
+#include <ArduinoJson.h>                   
+#include <OneWire.h>                      
+#include <DallasTemperature.h>              
+
+// Definições para a rede WiFi e Firebase
+#define WIFI_SSID "wifi"                  // Nome ficticio da rede WiFi
+#define WIFI_PASSWORD "password"           //  senha ficticia da sua rede WiFi
+#define FIREBASE_HOST "https://sensores-rtdb.firebaseio.com/"  //  link fictício do banco de dados Firebase
+#define FIREBASE_AUTH "senhadeaut"  // chave fictícia de autenticação do Firebase
+
+
+#define ONE_WIRE_BUS 4 
+
+OneWire oneWire(ONE_WIRE_BUS);               
+DallasTemperature sensors(&oneWire);         
+
+void setup() {
+  Serial.begin(115200);                      
+  Serial.println();
+
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);      
+  Serial.print("Conectando ao WiFi");
+  while (WiFi.status() != WL_CONNECTED) {    
+    Serial.print(".");
+    delay(300);
+  }
+  Serial.println();                          
+  Serial.println("WiFi conectado");
+
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);   
+
+  sensors.begin();                          
+}
+
+void loop() {
+  sensors.requestTemperatures();             
+
+
+  for (int i = 0; i < 3; i++) {              
+    float temperatureC = sensors.getTempCByIndex(i);  
+
+    if (temperatureC != DEVICE_DISCONNECTED_C) {  
+      Serial.print("Refrigerador ");
+      Serial.print(i + 1);                   
+      Serial.print(" - Temperatura: ");
+      Serial.println(temperatureC);
+
+      
+      Firebase.pushFloat("/lab/r" + String(i + 1) + "-temp", temperatureC);
+      Serial.println("Temperatura enviada para o Firebase");
+    } else {
+      Serial.print("Erro: Sensor ");
+      Serial.print(i + 1);
+      Serial.println(" desconectado!");
+    }
+  }
+
+  delay(6000);  // Envia os dados a cada 6 segundos
+}
