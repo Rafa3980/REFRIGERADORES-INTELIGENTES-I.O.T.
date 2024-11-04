@@ -1,0 +1,18 @@
+.input-style {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4;
+}
+
+.input-text {
+  @apply input-style  h-[60px];
+}
+
+.input-textarea {
+  @apply input-style;
+}
+
+.input-text[disabled] {
+  @apply bg-gray-300 text-gray-900 cursor-not-allowed;
+}
+.label {
+  @apply block mb-1 mt-2 text-base font-medium text-gray-900;
+}
