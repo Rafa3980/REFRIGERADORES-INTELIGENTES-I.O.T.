@@ -26,17 +26,17 @@ A proposta consiste na utilização de uma placa ESP32 conectada a sensores de t
 * Linkedin:
 * email:
 
-## -
+## - Gabriel Assis dos Santos
 
 * Linkedin
 * email:
 
-## -
+## - Higor Pinheiro Muniz
 
 * Linkedin:
 * email:
 
-## -
+## - Luiz Felipe Barata Queiroz
 
 * Linkedin:
 * email:
